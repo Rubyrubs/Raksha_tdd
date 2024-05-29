@@ -31,7 +31,7 @@ RSpec.describe StringCalculatorLogic do
        result = StringCalculatorLogic.add('1,-2\n,-3,\n')
        expect(result).to eq("negative numbers not allowed -2, -3")
      end
-
+     
      it 'returns 9 for an string' do
        result = StringCalculatorLogic.add("2,1,6")
        expect(result).to eq(9)
@@ -53,6 +53,15 @@ RSpec.describe StringCalculatorLogic do
        expect(result).to eq('invalid')
      end
 
+     it 'returns sum of number for string' do
+       result = StringCalculatorLogic.add('//;\n1;2;4')
+       expect(result).to eq(7)
+     end
+
+     it 'returns sum of and not include number >1000' do
+       result = StringCalculatorLogic.add('2,1001')
+       expect(result).to eq(2)
+     end
 
      it 'returns sum for string contain *' do
        result = StringCalculatorLogic.add('/[***]\n1***2***3')
