@@ -14,6 +14,7 @@ RSpec.describe StringCalculatorLogic do
        result = StringCalculatorLogic.add("1")
        expect(result).to eq(1)
        puts "returns 1 for an empty string"
+       
      end
 
      it 'returns sum for an string' do

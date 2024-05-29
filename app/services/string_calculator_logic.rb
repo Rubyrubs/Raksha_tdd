@@ -21,4 +21,5 @@ class StringCalculatorLogic
 
     numbers.sum
   end
+  
 end
