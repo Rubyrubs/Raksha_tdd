@@ -12,6 +12,7 @@ class StringCalculatorLogic
     numbers = numbers_string.gsub('\n', ",").split(',').map(&:to_i) if numbers_string.include?('\n')
 
     numbers = numbers_string.split("\;").map {|x| x[/\d+/]}.map(&:to_i) if numbers_string.start_with?("//")
+    numbers = numbers_string.split("*").map {|x| x[/\d+/]}.map(&:to_i) if numbers_string.include?('*')
 
     return "invalid" if numbers_string.split(',').include?('\n') 
 
