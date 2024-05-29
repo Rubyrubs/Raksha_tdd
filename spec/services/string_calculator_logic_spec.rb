@@ -17,5 +17,21 @@ RSpec.describe StringCalculatorLogic do
        
      end
 
+     it 'returns sum for an string' do
+       result = StringCalculatorLogic.add("0,5")
+       expect(result).to eq(5)
+     end
+
+     it 'returns exception for negative numbers' do
+        result = StringCalculatorLogic.add("1,-2,3,-4,-6")
+        expect(result).to eq("negative numbers not allowed -2, -4, -6")
+     end
+
+     it 'returns exception for negative numbers' do
+       result = StringCalculatorLogic.add('1,-2\n,-3,\n')
+       expect(result).to eq("negative numbers not allowed -2, -3")
+     end
+
+
    end
 end
