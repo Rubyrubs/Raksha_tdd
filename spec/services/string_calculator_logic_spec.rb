@@ -32,6 +32,27 @@ RSpec.describe StringCalculatorLogic do
        expect(result).to eq("negative numbers not allowed -2, -3")
      end
 
+     it 'returns 9 for an string' do
+       result = StringCalculatorLogic.add("2,1,6")
+       expect(result).to eq(9)
+     end
+
+     it 'returns 6 for an empty string' do
+       result = StringCalculatorLogic.add("1,5,2,5")
+       expect(result).to eq(13)
+     end
+
+
+     it 'returns 20 for an \n string' do
+       result = StringCalculatorLogic.add('2\n4,6\n8')
+       expect(result).to eq(20)
+     end
+
+     it 'returns invalid for an empty string' do
+       result = StringCalculatorLogic.add('1,\n')
+       expect(result).to eq('invalid')
+     end
+
 
    end
 end
